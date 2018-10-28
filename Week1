@@ -11,8 +11,13 @@ My code:
 people = ['Dr. Christopher Brooks', 'Dr. Kevyn Collins-Thompson', 'Dr. VG Vinod Vydiswaran', 'Dr. Daniel Romero']
 
 def split_title_and_name(person):
-        person = person.split()
-        person = person[0] + '' + person[-1]
+        person = person.split()[0] + '' + person.split()[-1]
         return person
 
 list(map(split_title_and_name, people))
+
+
+Another way to do this:
+
+split_title_and_name = lambda person: person.split()[0] + '' + person.split()[-1]
+list(map(split_title_and_name, people)) 
